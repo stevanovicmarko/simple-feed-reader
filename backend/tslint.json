@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "no-console": false,
+    "no-this-assignment": [true, {"allowed-names": ["^self$"], "allow-destructuring": true}],
+    "no-implicit-dependencies": [true, "dev"],
+    "object-literal-sort-keys": [true, "match-declaration-order"],
+    "no-object-literal-type-assertion": false
+  }
+}
