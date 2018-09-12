@@ -38,7 +38,7 @@ export const removeUser = async (
 
   try {
     if (!user) {
-      return res.status(403).send({ error: 'userRef not provided' });
+      return res.status(403).send({ error: 'user not provided' });
     }
 
     const existingUser = await User.findOne({ _id: user._id });
@@ -48,7 +48,7 @@ export const removeUser = async (
         .send({ error: "couldn't find userRef in the database" });
     }
     await existingUser.remove();
-    res.status(201).send({ success: 'userRef successfully removed' });
+    res.status(201).send({ success: 'user successfully removed' });
   } catch (err) {
     return next(err);
   }

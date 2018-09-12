@@ -9,7 +9,7 @@ import { authMiddleware, signinMiddleware } from '../middleware/passportMiddlewa
 const routes = Router();
 
 // login route
-routes.post('/login', signinMiddleware, authController.signIn);
+routes.post('/signin', signinMiddleware, authController.signIn);
 
 // addUser route, unprotected
 routes.post('/users', userController.addUser);
