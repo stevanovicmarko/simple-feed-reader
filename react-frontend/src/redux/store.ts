@@ -1,12 +1,12 @@
 import { applyMiddleware, combineReducers, compose, createStore, Store } from 'redux';
-import createSagaMiddleware from 'redux-saga'
+import createSagaMiddleware from 'redux-saga';
 import counterReducer, { ICounterState } from './login/loginEntity';
 
 interface IAppState {
   counter: ICounterState;
 }
 
-const rootReducer = combineReducers<IAppState>({ counter:  counterReducer });
+const rootReducer = combineReducers<IAppState>({ counter: counterReducer });
 
 import rootSaga from './rootSaga';
 
