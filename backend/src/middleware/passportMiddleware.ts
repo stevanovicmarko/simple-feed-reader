@@ -6,7 +6,7 @@ import {
 } from 'passport-jwt';
 import { Strategy as LocalStrategy } from 'passport-local';
 
-import { User } from '../models/userModel';
+import { User, IUserDocument } from '../models/userModel';
 
 export interface IJwtPayload {
   sub: string;
@@ -39,10 +39,10 @@ const jwtOptions = {
 const jwtLogin = new JwtStrategy(
   jwtOptions,
   async (payload: IJwtPayload, done: VerifiedCallback) => {
-    const user = await User.findById(payload.sub).catch(err =>
+    const user: IUserDocument | void = await User.findById(payload.sub).catch(err =>
       done(err, false)
     );
-    done(null, user || false);
+    done(null, user);
   }
 );
 

@@ -19,10 +19,12 @@ app.use(helmet());
 app.use('/', routes);
 
 // mongodb setup
+mongoose.set('useCreateIndex', true);
+
 mongoose
   .connect(
     MONGODB_URI,
-    { useNewUrlParser: true }
+    { useNewUrlParser: true },
   )
   .then(() => {
     app.listen(SERVER_PORT, SERVER_HOST, () =>
