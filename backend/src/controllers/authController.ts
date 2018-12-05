@@ -10,4 +10,3 @@ export const signIn = (req: Request, res: Response, next: NextFunction) => {
   }
   return next({ error: 'userRef not provided' });
 };
-

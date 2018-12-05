@@ -8,7 +8,7 @@ import logo from './logo.svg';
 import store from './redux/store';
 
 class App extends React.Component {
-  public render() {
+  public render(): JSX.Element {
     return (
       <Provider store={store}>
         <div className="App">

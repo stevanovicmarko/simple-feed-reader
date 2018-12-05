@@ -4,10 +4,17 @@
     "tslint-config-prettier"
   ],
   "rules": {
+    "max-line-length": {
+      "options": [100]
+    },
     "no-console": false,
     "no-this-assignment": [true, {"allowed-names": ["^self$"], "allow-destructuring": true}],
     "no-implicit-dependencies": [true, "dev"],
-    "object-literal-sort-keys": [true, "match-declaration-order"],
-    "no-object-literal-type-assertion": false
+    "object-literal-sort-keys": false,
+    "no-object-literal-type-assertion": false,
+    "typedef": [
+    	true,
+    	"call-signature"
+    ]
   }
 }
